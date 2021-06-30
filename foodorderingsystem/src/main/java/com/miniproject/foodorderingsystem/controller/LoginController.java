@@ -1,31 +1,25 @@
 package com.miniproject.foodorderingsystem.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+import com.miniproject.foodorderingsystem.model.User;
+import com.miniproject.foodorderingsystem.service.LoginService;
+
+@RestController
 public class LoginController {
-	@GetMapping("")
-	public String homePage() {
-		return "login";
-	}
+	@Autowired
+	private LoginService loginservice;
 
-	@RequestMapping("/register")
-	public String register() {
-		return "registration";
+// to register new user or add new users details to database
+	@PostMapping(path = "/add")
+	public User addUser(@RequestBody User user) {
+		System.out.println("Working...");
+		User Users = loginservice.save(user);
+		return Users;
 	}
-
-	@PostMapping("/adduser")
-	public void addUser(HttpServletRequest req) {
-		HttpSession session = req.getSession();
-		String name = req.getParameter("name");
-		System.out.println(name);
-		session.setAttribute("name", name);
-	}
+	// to verify the login user
 
 }
