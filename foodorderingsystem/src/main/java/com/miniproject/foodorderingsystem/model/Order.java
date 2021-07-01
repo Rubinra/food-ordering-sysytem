@@ -12,21 +12,15 @@ import javax.persistence.Table;
 public class Order {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int order_id;
+	private int bill;
 	@Column(nullable = false, length = 45)
 	private int quantity;
 	@Column(nullable = false, length = 45)
-	private String product_name;
+	private int eid;
 	@Column(nullable = false, length = 45)
 	private double total_price;
 
-	public int getOrder_id() {
-		return order_id;
-	}
-
-	public void setOrder_id(int order_id) {
-		this.order_id = order_id;
-	}
+	
 
 	public int getQuantity() {
 		return quantity;
@@ -36,14 +30,7 @@ public class Order {
 		this.quantity = quantity;
 	}
 
-	public String getProduct_name() {
-		return product_name;
-	}
-
-	public void setProduct_name(String product_name) {
-		this.product_name = product_name;
-	}
-
+	
 	public double getTotal_price() {
 		return total_price;
 	}
@@ -52,10 +39,30 @@ public class Order {
 		this.total_price = total_price;
 	}
 
+	public int getEid() {
+		return eid;
+	}
+
+	public void setEid(int eid) {
+		this.eid = eid;
+	}
+
+	public int getBill() {
+		return bill;
+	}
+
+	public void setBill(int bill) {
+		this.bill = bill;
+	}
+
 	@Override
 	public String toString() {
-		return "Order [order_id=" + order_id + ", quantity=" + quantity + ", product_name=" + product_name
-				+ ", total_price=" + total_price + "]";
+		return "Order [bill=" + bill + ", quantity=" + quantity + ", eid=" + eid + ", total_price=" + total_price + "]";
 	}
+
+	
+	
+
+	
 
 }

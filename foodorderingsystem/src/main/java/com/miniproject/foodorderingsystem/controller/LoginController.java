@@ -17,10 +17,10 @@ public class LoginController
 	@Autowired
 	private LoginService loginService;
 
-	@PostMapping("/adduser")
+	@PostMapping("/register")
 	User addUser(@RequestBody User user) 
 	{
-		System.out.println("Inside adduser controller");
+		System.out.println("Inside register controller");
 		User savedUser = loginService.save(user);
 		return savedUser;
 	}
@@ -28,7 +28,7 @@ public class LoginController
 	@GetMapping("/login")
 	public String login(HttpServletRequest request) throws SQLException 
 	{
-		System.out.println("Inside userlogin controller");
+		System.out.println("Inside login controller");
 		String name = request.getParameter("uname");
 		String password = request.getParameter("password");
 
@@ -59,5 +59,7 @@ public class LoginController
 	return "sorry, username or password error!";
 
 	}
+	
+	
 
 }

@@ -17,8 +17,19 @@ public class Payment {
 	private String bank;
 	@Column(nullable = false, length = 45)
 	private String email;
-	@Column(nullable = false, length = 45, unique = true)
+	@Column(nullable = false, length = 45)
 	private double price;
+	@Column(nullable = false, length = 45, unique = true)
+	private int bill;
+	
+
+	public int getBill() {
+		return bill;
+	}
+
+	public void setBill(int bill) {
+		this.bill = bill;
+	}
 
 	public double getPrice() {
 		return price;
@@ -54,7 +65,9 @@ public class Payment {
 
 	@Override
 	public String toString() {
-		return "Payment [payment_id=" + payment_id + ", bank=" + bank + ", email=" + email + ", price=" + price + "]";
+		return "Payment [payment_id=" + payment_id + ", bank=" + bank + ", email=" + email + ", price=" + price
+				+ ", bill=" + bill + "]";
 	}
+
 
 }

@@ -1,18 +1,15 @@
-
-
 package com.miniproject.foodorderingsystem.service.serviceimpl;
 
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.miniproject.foodorderingsystem.model.User;
 import com.miniproject.foodorderingsystem.repository.UserRepository;
 import com.miniproject.foodorderingsystem.service.LoginService;
 
 @Service
 public class LoginServiceImpl implements LoginService {
+	
 	@Autowired
 	UserRepository userRepository;
 
