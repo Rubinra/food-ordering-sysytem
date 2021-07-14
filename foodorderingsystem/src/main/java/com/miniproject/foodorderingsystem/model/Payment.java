@@ -16,28 +16,11 @@ public class Payment {
 	@Column(nullable = false, length = 45)
 	private String bank;
 	@Column(nullable = false, length = 45)
-	private String email;
-	@Column(nullable = false, length = 45)
-	private double price;
+	private double total_price;
 	@Column(nullable = false, length = 45, unique = true)
-	private int bill;
-	
-
-	public int getBill() {
-		return bill;
-	}
-
-	public void setBill(int bill) {
-		this.bill = bill;
-	}
-
-	public double getPrice() {
-		return price;
-	}
-
-	public void setPrice(double price) {
-		this.price = price;
-	}
+	private int oid;
+	@Column(nullable = false, length = 45, unique = true)
+	private String address;
 
 	public int getPayment_id() {
 		return payment_id;
@@ -55,19 +38,34 @@ public class Payment {
 		this.bank = bank;
 	}
 
-	public String getEmail() {
-		return email;
+	public double getTotal_price() {
+		return total_price;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setTotal_price(double total_price) {
+		this.total_price = total_price;
+	}
+
+	public int getOid() {
+		return oid;
+	}
+
+	public void setOid(int oid) {
+		this.oid = oid;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	@Override
 	public String toString() {
-		return "Payment [payment_id=" + payment_id + ", bank=" + bank + ", email=" + email + ", price=" + price
-				+ ", bill=" + bill + "]";
+		return "Payment [payment_id=" + payment_id + ", bank=" + bank + ", total_price=" + total_price + ", oid=" + oid
+				+ ", address=" + address + "]";
 	}
-
 
 }

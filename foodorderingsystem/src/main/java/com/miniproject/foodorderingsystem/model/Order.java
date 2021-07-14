@@ -8,19 +8,26 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
+
 @Table(name = "orders")
 public class Order {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int bill;
+	private int oid;
 	@Column(nullable = false, length = 45)
 	private int quantity;
 	@Column(nullable = false, length = 45)
-	private int eid;
+	private int pid;
 	@Column(nullable = false, length = 45)
 	private double total_price;
 
-	
+	public int getOid() {
+		return oid;
+	}
+
+	public void setOid(int oid) {
+		this.oid = oid;
+	}
 
 	public int getQuantity() {
 		return quantity;
@@ -30,7 +37,14 @@ public class Order {
 		this.quantity = quantity;
 	}
 
-	
+	public int getPid() {
+		return pid;
+	}
+
+	public void setPid(int pid) {
+		this.pid = pid;
+	}
+
 	public double getTotal_price() {
 		return total_price;
 	}
@@ -39,30 +53,9 @@ public class Order {
 		this.total_price = total_price;
 	}
 
-	public int getEid() {
-		return eid;
-	}
-
-	public void setEid(int eid) {
-		this.eid = eid;
-	}
-
-	public int getBill() {
-		return bill;
-	}
-
-	public void setBill(int bill) {
-		this.bill = bill;
-	}
-
 	@Override
 	public String toString() {
-		return "Order [bill=" + bill + ", quantity=" + quantity + ", eid=" + eid + ", total_price=" + total_price + "]";
+		return "Order [oid=" + oid + ", quantity=" + quantity + ", pid=" + pid + ", total_price=" + total_price + "]";
 	}
-
-	
-	
-
-	
 
 }

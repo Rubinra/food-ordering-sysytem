@@ -5,13 +5,13 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.miniproject.foodorderingsystem.model.Products;
 import com.miniproject.foodorderingsystem.repository.ProductRepository;
 import com.miniproject.foodorderingsystem.service.ProductService;
 
 @Service
-public class ProductServiceImpl implements ProductService
-{
+public class ProductServiceImpl implements ProductService {
 	@Autowired
 	ProductRepository productRepository;
 
@@ -27,8 +27,8 @@ public class ProductServiceImpl implements ProductService
 		return productRepository.save(product);
 	}
 
-	public Products updateProduct(Products product, Integer id) {
-		product.setEid(id);
+	public Products updateProducts(Products product, Integer id) {
+		product.setPid(id);
 		return productRepository.save(product);
 	}
 

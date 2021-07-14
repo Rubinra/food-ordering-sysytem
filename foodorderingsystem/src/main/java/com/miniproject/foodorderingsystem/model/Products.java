@@ -12,18 +12,18 @@ import javax.persistence.Table;
 public class Products {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int eid;
+	private int pid;
 	@Column(nullable = false, length = 45)
 	private String product_name;
 	@Column(nullable = false, length = 45)
 	private double price;
 
-	public int getEid() {
-		return eid;
+	public int getPid() {
+		return pid;
 	}
 
-	public void setEid(int eid) {
-		this.eid = eid;
+	public void setPid(int pid) {
+		this.pid = pid;
 	}
 
 	public String getProduct_name() {
@@ -38,13 +38,13 @@ public class Products {
 		return price;
 	}
 
-	public void setPrice(int price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 
 	@Override
 	public String toString() {
-		return "Products [eid=" + eid + ", product_name=" + product_name + ", price=" + price + "]";
+		return "Products [pid=" + pid + ", product_name=" + product_name + ", price=" + price + "]";
 	}
 
 }

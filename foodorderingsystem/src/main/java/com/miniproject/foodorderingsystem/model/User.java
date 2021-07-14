@@ -77,7 +77,7 @@ public class User {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/foodorderingsystem", "root",
-					"rubin@123");
+					"vivek@1234567");
 		} catch (Exception e) {
 			System.out.println(e);
 		}

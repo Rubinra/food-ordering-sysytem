@@ -9,7 +9,7 @@ import com.miniproject.foodorderingsystem.service.LoginService;
 
 @Service
 public class LoginServiceImpl implements LoginService {
-	
+
 	@Autowired
 	UserRepository userRepository;
 
@@ -21,7 +21,7 @@ public class LoginServiceImpl implements LoginService {
 		return userRepository.save(user);
 	}
 
-	public User updateEmployee(User user, Integer id) {
+	public User updateUser(User user, Integer id) {
 		user.setUid(id);
 		return userRepository.save(user);
 	}
