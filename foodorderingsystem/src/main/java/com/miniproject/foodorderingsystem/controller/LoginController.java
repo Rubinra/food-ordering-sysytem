@@ -3,9 +3,12 @@ package com.miniproject.foodorderingsystem.controller;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+
 import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -17,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.miniproject.foodorderingsystem.model.User;
 import com.miniproject.foodorderingsystem.service.LoginService;
 @CrossOrigin(origins = "http://localhost:4200")
@@ -78,6 +82,13 @@ public class LoginController {
 			status.put("Status", "User does not exist");
 		}
 		return status;
+	}
+	//to fetch user details
+	@GetMapping("/listUsers")
+	List<User> getUsers() {
+		System.out.println("Inside listproducts controller");
+		return loginService.findByAll();
+
 	}
 
 }

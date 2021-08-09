@@ -1,0 +1,130 @@
+<h1>ADMIN</h1>
+<!-- Admin Navbar-->
+<nav class="navbar navbar-light bg-light">
+    <form class="form-inline">
+      <button class="btn btn-outline-success" type="button" (click) = "editProduct()">Edit Products</button>
+      <button class="btn btn-sm btn-outline-secondary" type="button" (click)="editUser()">Edit Users</button>
+    </form>
+  </nav>
+
+<!-- Get all Form -->
+<div  *ngIf="userForm" class="container">
+    <div>
+        <div class="input-group">
+            <input type="search" class="form-control rounded" placeholder="search by ID" aria-label="Search"
+                aria-describedby="search-addon" />
+            <div>
+                <button type="button" class="btn btn-outline-primary">search</button>
+            </div>
+        </div>
+
+        <br><br><br><br>
+        <div class="container">
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Product Id</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Edit Products</th>
+                        <th scope="col">Delete Products</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let product of products">
+                        <th scope="row">{{product.pid}}</th>
+                        <td>{{product.product_name}}</td>
+                        <td>{{product.price}}</td>
+                        <td> <button class="btn btn-outline-info">Edit</button></td>
+                        <td> <button class="btn btn-outline-info">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div>
+                <button class="btn btn-outline-danger">Delete All</button>
+            </div>
+            <div>
+                <button  class="btn btn-success" (click)="newProduct()">Add</button>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<!-- user Edit Form -->
+<div  *ngIf="productForm" class="container">
+    <div>
+        <div class="input-group">
+            <input type="search" class="form-control rounded" placeholder="search by ID" aria-label="Search"
+                aria-describedby="search-addon" />
+            <div>
+                <button type="button" class="btn btn-outline-primary">search</button>
+            </div>
+        </div>
+
+        <br><br><br><br>
+        <div class="container">
+
+            <table class="table table-striped">
+                <thead>
+                    <tr >
+                        <th scope="col">User Id</th>
+                        <th scope="col">User Name</th>
+                        <th scope="col">Password</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">Delete Products</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let user of users">
+                        <th scope="row"> {{user.uid}}</th>
+                        <td>{{user.uname}}</td>
+                        <td>{{user.password}}</td>
+                        <td>{{user.email}}</td>
+                        <td> <button class="btn btn-outline-info">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div>
+                <button class="btn btn-outline-danger">Delete All</button>
+            </div>
+            <div>
+                <button  class="btn btn-success">Add</button>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!-- add product-->
+<div *ngIf="addProduct"  class="addProductForm">
+    <h3>Add Products</h3>
+    <div  style="width: 300px;">
+        <form >
+            <div class="form-group">
+                <label for="pid">Product ID</label>
+                <input type="text" class="form-control" id="pid" required  name="pid">
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Product Name</label>
+                <input type="number" class="form-control" id="quantity" required  name="quantity">
+            </div>
+
+            <div class="form-group">
+                <label for="total_price">Product price</label>
+                <input type="number" class="form-control" id="total_price" required  name="total_price">
+            </div>
+
+            <button type="submit" class="btn btn-success">Submit</button>
+
+            <button type="submit" class="btn btn-success" (click)="closeForm()" >close</button>
+        </form>
+    </div>
+</div>

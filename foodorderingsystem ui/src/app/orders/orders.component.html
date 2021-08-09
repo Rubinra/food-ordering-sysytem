@@ -1,29 +1,24 @@
 <h1>Orders</h1>
 <div class="reg">
     <h3>Place order</h3>
-    <div [hidden]="submitted" style="width: 300px;">
+    <div  style="width: 300px;">
         <form (ngSubmit)="onSubmit()">
             <div class="form-group">
-                <label for="id">Product ID</label>
-                <input type="text" class="form-control" id="id" required [(ngModel)]="order.pid" name="id">
+                <label for="pid">Product ID</label>
+                <input type="text" class="form-control" id="pid" required [(ngModel)]="order.pid" name="pid">
             </div>
 
             <div class="form-group">
-                <label for="name">Quantity</label>
-                <input type="number" class="form-control" id="name" required [(ngModel)]="order.quantity" name="name">
+                <label for="quantity">Quantity</label>
+                <input type="number" class="form-control" id="quantity" required [(ngModel)]="order.quantity" name="quantity">
             </div>
 
             <div class="form-group">
-                <label for="mark">Total price</label>
-                <input type="number" class="form-control" id="mark" required [(ngModel)]="order.total_price" name="mark">
+                <label for="total_price">Total price</label>
+                <input type="number" class="form-control" id="total_price" required [(ngModel)]="order.total_price" name="total_price">
             </div>
 
             <button type="submit" class="btn btn-success">Submit</button>
         </form>
-    </div>
-
-    <div [hidden]="!submitted">
-        <h4>You Sucessfully order</h4>
-        <button class="btn btn-success" (click)="newOrder()">Add</button>
     </div>
 </div>

@@ -9,12 +9,16 @@ import { ProductlistComponent } from './components/productlist/productlist.compo
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { OrdersComponent } from './orders/orders.component';
+import { AdminComponent } from './admin/admin.component';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductlistComponent,
-    OrdersComponent
+    OrdersComponent,
+    AdminComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
